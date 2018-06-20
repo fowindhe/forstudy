@@ -12,7 +12,7 @@ import (
 )
 var style = flag.String("s", "sha256", "采用的哈西函数:sha1,sha256")
 var filename = flag.String("f", "", "需要计算散列值的文件名")
-func main() {
+func hashfun() {
   flag.Parse()
   var hs hash.Hash
   switch *style {

@@ -12,7 +12,8 @@ func fibonacci(n int, c chan int) {
     }
     close(c)
 }
-func main() {
+func  main(){
+    hashfun()
     c := make(chan int, 10)
     go fibonacci(cap(c), c)
     for i := range c {
