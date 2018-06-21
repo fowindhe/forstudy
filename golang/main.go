@@ -3,6 +3,7 @@ package main
 import (
     "fmt"
 )
+
 func fibonacci(n int, c chan int) {
 	x, y := 1, 1
 	fmt.Println(n)
