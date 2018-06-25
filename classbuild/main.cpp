@@ -46,13 +46,13 @@ D func1(D d);
 template <class charC>
 //charC func2(charC c,charC d);
 char * func2(charC c,charC d){
-    char a[3];
+    char a[3]={0};
     a[0]=c;
     a[1]=d;
     a[2]='\0';
-    cout<<a<<endl;
+    cout<<"1==="<<a<<endl;
     char *f=a;
-    cout<<f<<endl;
+    cout<<"2==="<<f<<endl;
     return f;
 
 }
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[])
     char c1='a';
     char c2='b';
     char *c3=func2(c1,c2);
-    cout<<c3<<endl;
+    cout<<func2(c1,c2)<<"3==="<<c3<<endl;
     printf("hello\n");
     A *a=new B;
     B *b=new B;
@@ -71,7 +71,7 @@ int main(int argc, char const *argv[])
     a=&c; 
     c.print();
     a->a=3;
-    a->print(*a);
+    a->print(c);
     b->print();
     c.~B();
   //  delete a;

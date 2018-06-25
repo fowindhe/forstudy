@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <string.h>
-#include "c++/4.2.1/backward/iostream.h"
+#include <iostream>
 using namespace std;
 void getMaxC(char *src,char&thec,int &count){
     int counts[256]={0};
     int tmpc='\0';
-    for(char* curp=src;curp;curp++){
+    for(const char* curp=src;*curp!='\0';curp++){
         counts[*curp]++;
         if(counts[*curp]>counts[tmpc]){
             tmpc=*curp;
@@ -31,7 +31,7 @@ void QSort(char* src,int low,int high){
     int key=src[low];
     int tmpc=0;
     while(first<last){
-        while(low<last&&src[last]>=key)
+        while(first<last&&src[last]>=key)
             last--;
         tmpc=src[first];
         src[first]=src[last];
@@ -49,17 +49,18 @@ void QSort(char* src,int low,int high){
 
 int main(int argc, char const *argv[])
 {
-    char src[]="hello my brother 123321";
+    char src[]="hello my brother 123333321";
+    char *Src1=src;
     cout<<src<<endl;
-    QSort(src,0,strlen(src)-1);
+    QSort(Src1,0,strlen(Src1)-1);
     cout<<src<<endl;
      char maxc;
      int counts;
      getMaxC(src,maxc,counts);
     printf("%c===%d\n",maxc,counts);
-    //int inter=9;
-    // counts=get1Counts(inter);
-    // printf("1counts=%d",counts);
+    int inter=9;
+     counts=get1Counts(inter);
+     printf("1counts=%d",counts);
 
     return 0;
 }
